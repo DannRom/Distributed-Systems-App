@@ -6,6 +6,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,12 @@ import { CarListComponent } from './car-list/car-list.component';
 import { BikeListComponent } from './bike-list/bike-list.component';
 import { YachtListComponent } from './yacht-list/yacht-list.component';
 
+import { CarService} from './services/car.service';
+import { YachtService} from './services/yacht.service';
+import { BikeService} from './services/bike.service';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { ContactComponent } from './contact/contact.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +30,9 @@ import { YachtListComponent } from './yacht-list/yacht-list.component';
     MenuComponent,
     CarListComponent,
     BikeListComponent,
-    YachtListComponent
+    YachtListComponent,
+    WelcomePageComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +42,8 @@ import { YachtListComponent } from './yacht-list/yacht-list.component';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyAAEE7dUF740uFCPLtoaAtKiK4GG0mfOkg'})
   ],
   providers: [],
   bootstrap: [AppComponent]
